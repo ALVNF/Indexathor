@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 9 feb. 2021 18:29:02 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="indexathor.Songs" table="songs" catalog="songs" optimistic-lock="version">
+        <composite-id name="id" class="indexathor.SongsId">
+            <key-property name="title" type="string">
+                <column name="Title" length="100" />
+            </key-property>
+            <key-property name="artist" type="string">
+                <column name="Artist" length="100" />
+            </key-property>
+        </composite-id>
+        <property name="fileName" type="string">
+            <column name="FileName" length="100" not-null="true" />
+        </property>
+        <property name="filePath" type="string">
+            <column name="FilePath" length="200" not-null="true" />
+        </property>
+        <property name="album" type="string">
+            <column name="Album" length="100" not-null="false" />
+        </property>
+        <property name="year" type="string">
+            <column name="Year" not-null="false" />
+        </property>
+        <property name="genre" type="string">
+            <column name="Genre" length="100" not-null="false" />
+        </property>
+        <property name="duration" type="int">
+            <column name="Duration" not-null="true" />
+        </property>
+        <property name="cover" type="binary">
+            <column name="Cover" not-null="false" />
+        </property>
+        <property name="lyrics" type="string">
+            <column name="Lyrics" length="16777215" not-null="false" />
+        </property>
+    </class>
+</hibernate-mapping>
